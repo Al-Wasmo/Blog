@@ -3,7 +3,7 @@ title: b01lersCTF-2025
 published: 2025-04-23
 description: ''
 image: ''
-tags: [CTF,Writups]
+tags: [fmt,pwn]
 category: 'Writups'
 draft: false 
 lang: ''

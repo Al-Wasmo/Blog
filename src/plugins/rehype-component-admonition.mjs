@@ -10,13 +10,21 @@ import { h } from "hastscript";
  * @param {import('mdast').RootContent[]} children - The children elements of the component.
  * @returns {import('mdast').Parent} The created admonition component.
  */
+
 export function AdmonitionComponent(properties, children, type) {
+	console.log("-----------------> ",type,type == "hide")
+	if(type == "hide") {
+		return h("blockquote",[...children])
+	}
+
 	if (!Array.isArray(children) || children.length === 0)
 		return h(
 			"div",
 			{ class: "hidden" },
 			'Invalid admonition directive. (Admonition directives must be of block type ":::note{name="name"} <content> :::")',
 		);
+
+
 
 	let label = null;
 	if (properties?.["has-directive-label"]) {

@@ -3,7 +3,7 @@ title: TexSaw-2025
 published: 2025-04-14
 description: ''
 image: ''
-tags: [CTF,Writups]
+tags: [ctf,pwn,misc]
 category: 'Writups'
 draft: false 
 lang: ''
