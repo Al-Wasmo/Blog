@@ -1,13 +1,20 @@
 ---
-title: Pwn Recaps
+title: pwn recaps
 published: 2025-04-25
 description: 'pwn notes related to ctfs'
 image: ''
-tags: [pwn]
+tags: [pwn,ctf]
 category: 'Writups'
 draft: false 
 lang: ''
 ---
+
+# HTB
+### `Ancient_Interface`
+- make read return -1 because of the signal in alarm, which will cause a underflow
+- use it to rop and get a shell  
+### `Complaint_Conglomerate`
+- cause a malloc_consolidate of fastbin chunks to get a unsortedbin chunk (libc leak) then rop
 
 
 # BSidesSF 2025 
@@ -18,6 +25,7 @@ lang: ''
 - write in /proc/self/mem, to the plt because open("/proc/self/mem") -> read() can write to `ro` mem
 - write in the plt section shell code to pop a shell 
 
+
 ### got
 - close@got -> main
 - strncmp@got -> printf@got 
@@ -25,6 +33,11 @@ lang: ''
 - overwrite strlen@got of libc with system 
 - damn this one is cool
  
+## junior-pwner
+- take controle of rbp using a bof
+- overwrite bss section `messeges` var to address of puts
+- leak libc -> one_gadget/system 
+
 
 
 # UMass-2025
